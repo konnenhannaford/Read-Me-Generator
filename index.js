@@ -6,16 +6,20 @@ const path = require ('path');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const questions = [
+const questions = 
+// inquirer
+//   .prompt(
+      [
     {
         name:"title",
         message:"Give your Project a title",
         type:"input",
-    },
-    {
-        name:"contact",
-        message:"Provide a github username, an email and link to personal site if available",
-        type:"input",
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("You must give a valid name for the file");
+            }
+            return true;
+            }
     },
     {
         name:"description",
@@ -25,6 +29,11 @@ const questions = [
     {
         name:"justification",
         message:"Give info on purpose of this project and what problems it solves",
+        type:"input",
+    },
+    {
+        name:"technologies",
+        message:"Give info on technologies used in this project",
         type:"input",
     },
     {
@@ -38,8 +47,23 @@ const questions = [
         type:"input",
     },
     {
-        name:"contribution",
+        name:"contributing",
         message:"Give details on how to access site and contribute ",
+        type:"input",
+    },
+    {
+        name:"testing",
+        message:"Give details on how this can be tested",
+        type:"input",
+    },
+    {
+        name:"github",
+        message:"Provide a github username",
+        type:"input",
+    },
+    {
+        name:"email",
+        message:"Provide an email address",
         type:"input",
     },
     {
@@ -48,31 +72,67 @@ const questions = [
         type:"input",
     },
     {
-        name: "licence",
-        message: "Choose your licence:",
+        name: "license",
+        message: "Choose your license:",
         type: "list",
-        choices: ["BSD", "Eclipse", "GNU General Public License", "MIT license", "Mozilla Public License", "Common Development and Distribution License"],
-      }
-];
+        choices: ["Apache 2.0", "BSD", "Eclipse", "GNU General Public license", "MIT license", "Mozilla Public license", "Common Development and Distribution license"],
+    },
+    {
+        name: "year",
+        message: "Provide a year of copyright for your license:",
+        type: "input",
+        
+    }];
 
 
 //  how do i do a - Table of Contents, 
 //  what are - Tests, and Questions
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
+// do i need to do fs.writefile or what ive done below
+// function writeToFile(fileName, data) {}
+const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, data, (err) =>{
+    
+    }
+    );
+    }
 // TODO: Create a function to initialize app - no clue if this is correct
 function init() {
     inquirer.prompt(questions)
     .then(inquirerResponses => {
       console.log('Generating README...');
-      let title = `${answers.title}.md`
-      writeToFile(title, generateMarkdown({ ...inquirerResponses }));
-    });
+      writeToFile('./output/README.md', generateMarkdown({ ...inquirerResponses }));
+    // change filename to readme if this doesnt work
+});
   }
 
-  
 // Function call to initialize app
 init();
+
+
+// // TODO: Create a function to write README file
+// // do i need to do fs.writefile or what ive done below
+// function writeToFile(fileName, data)  {
+//     // const writeToFile = (fileName, data) => {
+//         fs.writeFile(`${filename}.md`, data, (err) =>{
+        
+//         }
+//         );
+//         }
+//     // TODO: Create a function to initialize app - no clue if this is correct
+//     function init() {
+//         inquirer.prompt(questions)
+//         .then(inquirerResponses => {
+//           console.log('Generating README...');
+//           writeToFile('./output/${filename}.md', generateMarkdown({ ...inquirerResponses }));
+//         //   do i need this
+//         //   .catch((err) => console.error(err));
+    
+//         });
+//       }
+    
+      
+//     // Function call to initialize app
+//     init();
 
