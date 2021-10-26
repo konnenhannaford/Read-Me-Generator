@@ -6,10 +6,7 @@ const path = require ('path');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const questions = 
-// inquirer
-//   .prompt(
-      [
+const questions = [
     {
         name:"title",
         message:"Give your Project a title",
@@ -75,7 +72,7 @@ const questions =
         name: "license",
         message: "Choose your license:",
         type: "list",
-        choices: ["Apache 2.0", "BSD", "Eclipse", "GNU General Public license", "MIT license", "Mozilla Public license", "Common Development and Distribution license"],
+        choices: ["No Licence used", "Apache 2.0", "BSD 3", "Eclipse", "GNU General Public license v3", "MIT license", "Mozilla Public license", "Common Development and Distribution license"],
     },
     {
         name: "year",
@@ -84,55 +81,19 @@ const questions =
         
     }];
 
-
-//  how do i do a - Table of Contents, 
-//  what are - Tests, and Questions
-
 // TODO: Create a function to write README file
-// do i need to do fs.writefile or what ive done below
-// function writeToFile(fileName, data) {}
 const writeToFile = (fileName, data) => {
-    fs.writeFile(fileName, data, (err) =>{
-    
-    }
-    );
-    }
-// TODO: Create a function to initialize app - no clue if this is correct
+    fs.writeFile(fileName, data, (err) =>{});    
+}
+
+// TODO: Create a function to initialize app 
 function init() {
     inquirer.prompt(questions)
     .then(inquirerResponses => {
       console.log('Generating README...');
       writeToFile('./output/README.md', generateMarkdown({ ...inquirerResponses }));
-    // change filename to readme if this doesnt work
 });
   }
 
 // Function call to initialize app
 init();
-
-
-// // TODO: Create a function to write README file
-// // do i need to do fs.writefile or what ive done below
-// function writeToFile(fileName, data)  {
-//     // const writeToFile = (fileName, data) => {
-//         fs.writeFile(`${filename}.md`, data, (err) =>{
-        
-//         }
-//         );
-//         }
-//     // TODO: Create a function to initialize app - no clue if this is correct
-//     function init() {
-//         inquirer.prompt(questions)
-//         .then(inquirerResponses => {
-//           console.log('Generating README...');
-//           writeToFile('./output/${filename}.md', generateMarkdown({ ...inquirerResponses }));
-//         //   do i need this
-//         //   .catch((err) => console.error(err));
-    
-//         });
-//       }
-    
-      
-//     // Function call to initialize app
-//     init();
-
