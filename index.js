@@ -94,6 +94,6 @@ function init() {
       writeToFile('./output/README.md', generateMarkdown({ ...inquirerResponses }));
 });
   }
-
+  
 // Function call to initialize app
 init();

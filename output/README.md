@@ -1,8 +1,7 @@
 
-# sgdfgdfgdfhdf
+# Read Me Gen
 
-##License Badge
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Content 
 * [Description](#description)
@@ -18,26 +17,26 @@
 * [Questions](#questions)
 
 ## Description
-hdfh
+a read me gen using node
 ## Justification
-dfhdfhdf
+to be able to create Read Mes quickly
 ## Technologies
-hdfh
+javascript, inqurie
 ## Installation
-dfh
+this can be downloaded from my repo at https://konnenhannaford.github.io/password-generator/
 ## Usage
-dfh  
+downlaod from repo   
 ## Contributing
-dfh
+access repo @ https://github.com/konnenhannaford
 ## Tests
-dfh
+no tests
 ## Questions
-Github UserName - df
-Github Profile - https://github.com/df
+Github UserName - konnen23
+Github Profile - https://github.com/konnen23
 Contact me for further info and any questions
-Email - hdf
+Email - konnen23@gmail.com
 ## Credits
-h
+na
 ## License
-No Licence used<br>
-Copyright (c) [df] [sgdfgdfgdfhdf] <br>
+MIT license<br>
+Copyright (c) [2021] [Read Me Gen] <br>
