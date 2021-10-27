@@ -34,9 +34,13 @@ Project can be accesed here - https://github.com/konnenhannaford/Read-Me-Generat
 Use node to load the app (node index.js).  Then follow the prompts and view the created file. 
 
 ## Usage
+
+Walkthrough video link: https://watch.screencastify.com/v/BKItKpOcXESryMfuri5v
+
+
 Follow the prompts after running and view the created file at the end.  The created file can still be edited by accessing the README.md file and then saved.  
 
-![Deployed Page](../images/codepic.png)
+![Deployed Page](images/codepic.png)
 
 Using the app multiple times or wanting to update it with alternative coding, will remove the existing created file.    
 ## Contributing
